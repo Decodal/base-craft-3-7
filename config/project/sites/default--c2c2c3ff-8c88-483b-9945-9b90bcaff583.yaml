@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-GB
+name: 'Concert Base Craft'
+primary: true
+siteGroup: 14eaedf3-c926-4a00-a4d2-e2bf862932e4 # Concert Base Craft
+sortOrder: 1

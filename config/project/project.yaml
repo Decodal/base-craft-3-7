@@ -1,0 +1,39 @@
+dateModified: 1661188381
+email:
+  fromEmail: dylan.hughes@buck.com
+  fromName: 'Concert Base Craft'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    02ae1ee2-06d8-4df2-9fd3-b8f86587e78e: Common # Common
+    14eaedf3-c926-4a00-a4d2-e2bf862932e4: 'Concert Base Craft' # Concert Base Craft
+    c2c2c3ff-8c88-483b-9945-9b90bcaff583: 'Concert Base Craft' # Concert Base Craft
+plugins:
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  kint:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: pro
+  live: true
+  name: 'Concert Base Craft'
+  schemaVersion: 3.7.33
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true
