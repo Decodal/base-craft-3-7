@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: mainContentPages
+name: 'Main Content Pages'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  c2c2c3ff-8c88-483b-9945-9b90bcaff583: # Concert Base Craft
+    enabledByDefault: true
+    hasUrls: true
+    template: _templates/entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 40e2bc45-63d5-4391-b2b0-f9e462a0127b
+type: structure

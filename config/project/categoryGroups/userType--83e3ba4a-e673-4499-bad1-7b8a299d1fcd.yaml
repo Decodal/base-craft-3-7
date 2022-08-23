@@ -1,0 +1,41 @@
+defaultPlacement: end
+fieldLayouts:
+  ab6f49ac-dd9d-4e51-bd45-3bd8b96a8f61:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: userType
+name: 'User type'
+siteSettings:
+  c2c2c3ff-8c88-483b-9945-9b90bcaff583: # Concert Base Craft
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 755d7784-39ae-4331-8688-2530850577e0

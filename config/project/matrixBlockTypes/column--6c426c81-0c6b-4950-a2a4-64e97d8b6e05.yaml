@@ -1,0 +1,75 @@
+field: 157f1dd3-6182-4ac8-b27f-1119802aa09c # Content Blocks
+fieldLayouts:
+  294472ca-be68-4e8f-8e5c-da291a90c918:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: aa3c0a64-212a-41e0-8de7-b38bea6cd6d5 # Audience
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3befc80f-8166-44e4-af10-24bb521cd51a # Column Class
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3befc80f-8166-44e4-af10-24bb521cd51a: # Column Class
+    columnSuffix: jatdtiol
+    contentColumnType: text
+    fieldGroup: null
+    handle: columnClass
+    instructions: 'Input a class or string of classes in Bootstrap 12-grid syntax to define this column'
+    name: 'Column Class'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: '.col-md-6 .col-lg-4'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  aa3c0a64-212a-41e0-8de7-b38bea6cd6d5: # Audience
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audience
+    instructions: ''
+    name: Audience
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:83e3ba4a-e673-4499-bad1-7b8a299d1fcd' # User type
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+handle: column
+name: Column
+sortOrder: 1

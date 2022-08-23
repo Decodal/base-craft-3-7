@@ -1,0 +1,112 @@
+field: 157f1dd3-6182-4ac8-b27f-1119802aa09c # Content Blocks
+fieldLayouts:
+  8b7f0b54-ce93-4615-847e-039794f3ec57:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: c14b2c7a-f075-42ac-a27a-626b0354f3dd # Audience
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ea33628d-a48f-4bd5-9b85-71027daf9e78 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7ed32bef-623e-42e1-9d39-f0d17d46e90e # Custom Class
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7ed32bef-623e-42e1-9d39-f0d17d46e90e: # Custom Class
+    columnSuffix: fgviknbj
+    contentColumnType: text
+    fieldGroup: null
+    handle: customClass
+    instructions: 'Attach one or more classes to this element separated by spaces'
+    name: 'Custom Class'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'class-1 class-2'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c14b2c7a-f075-42ac-a27a-626b0354f3dd: # Audience
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audience
+    instructions: 'Choose who can see this'
+    name: Audience
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:83e3ba4a-e673-4499-bad1-7b8a299d1fcd' # User type
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+  ea33628d-a48f-4bd5-9b85-71027daf9e78: # Text
+    columnSuffix: mcxqzuzy
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: regularCopy
+name: 'Regular Copy'
+sortOrder: 3

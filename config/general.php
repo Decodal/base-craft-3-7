@@ -34,4 +34,8 @@ return [
 
     // Whether crawlers should be allowed to index pages and following links
     'disallowRobots' => !$isProd,
+
+    'aliases' => [
+        '@web' => getenv('DEFAULT_SITE_URL') . '/',
+    ]
 ];

@@ -3,6 +3,12 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# Environment file
+.env
+
+# Licence key
+/config/license.key
+
 # Node artifact files
 node_modules/
 dist/
@@ -26,6 +32,10 @@ dist/
 # JetBrains IDE
 .idea/
 
+# VSCode
+*.vscode
+/.vscode
+
 # Unit test reports
 TEST*.xml
 
@@ -39,6 +49,7 @@ Thumbs.db
 *.app
 *.exe
 *.war
+*.sass-cache
 
 # Large media files
 *.mp4

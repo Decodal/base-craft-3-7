@@ -1,0 +1,104 @@
+field: 157f1dd3-6182-4ac8-b27f-1119802aa09c # Content Blocks
+fieldLayouts:
+  4ad2d562-7edb-4800-9f5e-743ccc4bd6d3:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3748f7bb-9550-4669-9be0-c771a7d47f6d # Audience
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 537c59a7-3dfb-4e2c-9ca1-74c8fa834cf3 # Template Name
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 19b73e72-72de-4895-ae29-6dd3671e0ef1 # Custom Class
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  19b73e72-72de-4895-ae29-6dd3671e0ef1: # Custom Class
+    columnSuffix: ymxfkyke
+    contentColumnType: text
+    fieldGroup: null
+    handle: customClass
+    instructions: 'Attach one or more classes to this element separated by spaces'
+    name: 'Custom Class'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'class-1 class-2'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  537c59a7-3dfb-4e2c-9ca1-74c8fa834cf3: # Template Name
+    columnSuffix: zkhyubqj
+    contentColumnType: text
+    fieldGroup: null
+    handle: templateName
+    instructions: 'The file name of the desired twig template, located in templates/_custom-blocks'
+    name: 'Template Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: template-name.twig
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3748f7bb-9550-4669-9be0-c771a7d47f6d: # Audience
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audience
+    instructions: ''
+    name: Audience
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:83e3ba4a-e673-4499-bad1-7b8a299d1fcd' # User type
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+handle: staticBlock
+name: 'Static Block'
+sortOrder: 8

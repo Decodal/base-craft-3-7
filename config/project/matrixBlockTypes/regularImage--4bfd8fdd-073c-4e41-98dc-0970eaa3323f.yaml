@@ -1,0 +1,176 @@
+field: 157f1dd3-6182-4ac8-b27f-1119802aa09c # Content Blocks
+fieldLayouts:
+  e82eee47-f866-49ad-bbd4-8108d09e11b2:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7de3ab69-d443-4205-8f66-2a048e8e1ed2 # Audience
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 919ad539-6911-45ac-bc4b-042df36b0ab2 # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cafd3db0-3c9e-4eac-a922-f672ad5ef6d1 # Description
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 00ae21ee-87ea-48ed-990e-409f6da72d17 # Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a9870b66-a3e3-4fe6-b828-0c252b0e4187 # Custom Class
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  00ae21ee-87ea-48ed-990e-409f6da72d17: # Caption
+    columnSuffix: bkzlphcn
+    contentColumnType: text
+    fieldGroup: null
+    handle: caption
+    instructions: 'Show a caption under the image. Leave blank if not required.'
+    name: Caption
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7de3ab69-d443-4205-8f66-2a048e8e1ed2: # Audience
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audience
+    instructions: 'Choose who can see this'
+    name: Audience
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:83e3ba4a-e673-4499-bad1-7b8a299d1fcd' # User type
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+  919ad539-6911-45ac-bc4b-042df36b0ab2: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:96c744fc-87db-44dc-a086-5ae952f73fad' # Images
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:96c744fc-87db-44dc-a086-5ae952f73fad' # Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  a9870b66-a3e3-4fe6-b828-0c252b0e4187: # Custom Class
+    columnSuffix: hnehkpux
+    contentColumnType: text
+    fieldGroup: null
+    handle: customClass
+    instructions: 'Attach one or more classes to this element separated by spaces'
+    name: 'Custom Class'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'class-1 class-2'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cafd3db0-3c9e-4eac-a922-f672ad5ef6d1: # Description
+    columnSuffix: pcjsopjy
+    contentColumnType: text
+    fieldGroup: null
+    handle: altTag
+    instructions: 'A short description of what''s in the image for visually impaired members.'
+    name: Description
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: regularImage
+name: 'Regular Image'
+sortOrder: 5

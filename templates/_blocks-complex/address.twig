@@ -1,0 +1,20 @@
+
+<div class="address {{ block.customClass ? block.customClass }}">
+
+  {% if block.email %}
+    <p class="address__email"><i class="fa fa-envelope"></i> <strong>Email: </strong><br><a href="mailto:{{ block.email }}">{{ block.email }}</a></p>
+  {% endif %}
+
+  {% if block.website %}
+    <p class="address__website"><i class="fa fa-globe"></i> <strong>Website: </strong><br><a target="_blank" href="https://{{ block.website }}">{{ block.website }}</a></p>
+  {% endif %}
+
+  {% if block.postalAddress %}
+    <p class="address__postalAddress"><i class="fa fa-home"></i> <strong>Address: </strong><br>{{ block.postalAddress|nl2br|raw }}</p>
+  {% endif %}
+
+  {% if block.telephone %}
+    <p class="address__telephone"><i class="fa fa-phone"></i> <strong>Telephone: </strong><br>{{ block.telephone }}</p>
+  {% endif %}
+
+</div>

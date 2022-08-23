@@ -1,0 +1,132 @@
+field: 157f1dd3-6182-4ac8-b27f-1119802aa09c # Content Blocks
+fieldLayouts:
+  3dff6724-0d2e-42af-a8b9-f5d9513ae3ef:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a3389b6c-3c44-4d2e-92b7-9acea68eb89a # Audience
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fe7f27d0-4eb4-4b8e-b7f2-2811cb5ec628 # Expander heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b6ed882c-7f7d-4f25-a47b-1582b73222eb # Expander Attributes
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  a3389b6c-3c44-4d2e-92b7-9acea68eb89a: # Audience
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audience
+    instructions: 'Choose who can see this'
+    name: Audience
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:83e3ba4a-e673-4499-bad1-7b8a299d1fcd' # User type
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+  b6ed882c-7f7d-4f25-a47b-1582b73222eb: # Expander Attributes
+    columnSuffix: grdejgvk
+    contentColumnType: string
+    fieldGroup: null
+    handle: expanderAttributes
+    instructions: ''
+    name: 'Expander Attributes'
+    searchable: true
+    settings:
+      multi: true
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Closes others'
+            -
+              - value
+              - closesOthers
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Defaults open'
+            -
+              - value
+              - defaultsOpen
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Is endcap'
+            -
+              - value
+              - isEndcap
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\MultiSelect
+  fe7f27d0-4eb4-4b8e-b7f2-2811cb5ec628: # Expander heading
+    columnSuffix: njokbjtg
+    contentColumnType: text
+    fieldGroup: null
+    handle: expanderHeading
+    instructions: 'Heading for the expander'
+    name: 'Expander heading'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: expander
+name: Expander
+sortOrder: 2

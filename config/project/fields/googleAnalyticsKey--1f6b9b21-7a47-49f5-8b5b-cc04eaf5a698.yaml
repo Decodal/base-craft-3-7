@@ -1,0 +1,19 @@
+columnSuffix: kzjsmnwd
+contentColumnType: text
+fieldGroup: a448fcce-1054-44de-ae1d-54931eab4ed5 # Meta
+handle: googleAnalyticsKey
+instructions: ''
+name: 'GA Key'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: 4
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

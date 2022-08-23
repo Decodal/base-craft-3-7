@@ -1,0 +1,191 @@
+field: 157f1dd3-6182-4ac8-b27f-1119802aa09c # Content Blocks
+fieldLayouts:
+  e504e0b8-00fd-449e-92d9-963e62f32e3b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1ea724df-ade0-49e2-af62-b1a2a65c08cc # Audience
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cfedab0d-6899-463e-a413-aad6ae194e73 # Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6f1f8583-ac69-4eee-9a18-b836be8d0c7a # Postal Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 039c016d-2191-4827-bd8f-5ba356dc009f # Telephone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6e658ce8-9b41-4d68-8472-d17816861e32 # Website
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 737dbb58-826d-411f-9708-03124661ee3b # Custom Class
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1ea724df-ade0-49e2-af62-b1a2a65c08cc: # Audience
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audience
+    instructions: 'Choose who can see this'
+    name: Audience
+    searchable: true
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: ''
+      limit: null
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: 'group:83e3ba4a-e673-4499-bad1-7b8a299d1fcd' # User type
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+  6e658ce8-9b41-4d68-8472-d17816861e32: # Website
+    columnSuffix: jprpimdt
+    contentColumnType: text
+    fieldGroup: null
+    handle: website
+    instructions: ''
+    name: Website
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6f1f8583-ac69-4eee-9a18-b836be8d0c7a: # Postal Address
+    columnSuffix: olijfakl
+    contentColumnType: text
+    fieldGroup: null
+    handle: postalAddress
+    instructions: ''
+    name: 'Postal Address'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '5'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  039c016d-2191-4827-bd8f-5ba356dc009f: # Telephone
+    columnSuffix: szzhvqiw
+    contentColumnType: text
+    fieldGroup: null
+    handle: telephone
+    instructions: ''
+    name: Telephone
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  737dbb58-826d-411f-9708-03124661ee3b: # Custom Class
+    columnSuffix: jtmaqxlc
+    contentColumnType: text
+    fieldGroup: null
+    handle: customClass
+    instructions: 'Attach one or more classes to this element separated by spaces'
+    name: 'Custom Class'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'class-1 class-2'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cfedab0d-6899-463e-a413-aad6ae194e73: # Email
+    columnSuffix: vvwczkro
+    contentColumnType: text
+    fieldGroup: null
+    handle: email
+    instructions: ''
+    name: Email
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: address
+name: Address
+sortOrder: 6

@@ -1,0 +1,138 @@
+{# --------
+To use this you will need to run:
+npm install -s chart.js
+Then load and use it in App.js with the script at the bottom of this page
+-------- #}
+
+{# {% set chartType = block.chartType %}
+{% set chartOptionsOverride = block.chartOptionsOverride %}
+{% set labels = "" %}
+{% set colours = "" %}
+{% set values = "" %}
+
+{% for segment in block.chartData %}
+  {% set labels = labels ~ segment.label ~ ',' %}
+  {% set colours = colours ~ segment.colour ~ ',' %}
+  {% set values = values ~ segment.value ~ ',' %}
+{% endfor %}
+
+<section class="chart">
+  <div class="chart__container">
+    <canvas
+      id="chart{{ loop.index }}"
+      width="400"
+      height="400"
+      data-chart-type="{{ chartType }}"
+      data-labels="{{ labels }}"
+      data-colours="{{ colours }}"
+      data-values="{{ values }}"
+      
+      {% if block.chartOptionsOverride %}
+        data-chart-options-override="{{ block.chartOptionsOverride }}"
+      {% endif %}
+      ></canvas>
+  </div>
+
+  <div class="chart__key">
+    {% for segment in block.chartData %}
+      <div class="chart__entry">
+        <div class="chart__key__label-colour" style="background-color:{{ segment.colour }}"></div>
+        <p class="chart__key__label">{{ segment.label }}</p>
+        <p class="chart__key__value">{{ segment.value }}%</p>
+      </div>
+    {% endfor %}
+  </div>
+</section> #}
+
+
+
+{# --------
+Move this script to App.js to use Chart.js
+-------- #}
+
+{# <script>
+
+  import Chart from '../../node_modules/chart.js/dist/Chart.min.js';
+
+  App.initMethods.charts = function() {
+    if ($(".chart").length > 0) {
+      function showPieChart(chart, key) {
+        var chartType = chart.attr("data-chart-type"),
+          values = chart.attr("data-values"),
+          values = values.substring(0, values.length - 1),
+          values = values.split(","),
+          colours = chart.attr("data-colours"),
+          colours = colours.substring(0, colours.length - 1),
+          colours = colours.split(","),
+          labels = chart.attr("data-labels"),
+          labels = labels.substring(0, labels.length - 1),
+          labels = labels.split(","),
+          currentChart = $(this),
+          data = {
+            labels: labels,
+            datasets: [
+              {
+                data: values,
+                backgroundColor: colours,
+                hoverBackgroundColor: colours,
+                borderWidth: 0
+              }
+            ]
+          },
+          chartOptions = {
+            animation: {
+              animateScale: false,
+              duration: 2000
+            },
+            legend: {
+              display: false
+            },
+            tooltips: {
+              enabled: true
+            },
+            hover: {
+              mode: null
+            }
+          };
+
+        if (chart[0].hasAttribute('data-chart-options-override')) {
+          chartOptions = '{' + chart.attr("data-chart-options-override") + '}',
+          chartOptions = chartOptions.replace(/(['"])?([a-z0-9A-Z_]+)(['"])?:/g, '"$2": '),
+          chartOptions = JSON.parse(chartOptions);
+        } else {
+          switch (chartType) {
+            case 'doughnut':
+              chartOptions.cutoutPercentage = 50;
+              break;
+            case 'bar':
+              chartOptions.scales = {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        xAxes: [{
+                            scaleLabel: {
+                                display: false
+                            }
+                        }]
+                    };
+              break;
+          } 
+        }
+
+        var myChart = new Chart(chart, {
+          type: chartType,
+          data: data,
+          options: chartOptions
+        });
+      }
+
+      $(".chart").each(function() {
+        var currentChart = $(this).find('canvas');
+        var currentChartKey = $(this).find('.chart__key');
+        showPieChart(currentChart, currentChartKey);
+      });
+    }
+  };
+</script> #}

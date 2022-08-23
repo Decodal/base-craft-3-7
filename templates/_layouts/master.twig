@@ -1,0 +1,142 @@
+{# LAYOUT: Master
+ # -------------------------------
+ # Master page layout contains header, footer and body container #}
+
+{# Inject variables to master template #}
+{% extends '_partials/_template-variables' %}
+
+{% set defaultSiteUrl = getenv("DEFAULT_SITE_URL") ~ "/" %}
+
+{% block master %}
+
+{# Set headers #}
+{# {% set expiry = now|date_modify('+30 days') %}
+{% header "Cache-Control: max-age=" ~ (expiry.timestamp - now.timestamp) %}
+{% header "Pragma: cache" %}
+{% header "Expires: " ~ expiry|date('D, d M Y H:i:s', 'GMT') ~ " GMT" %} #}
+{# {% header "x-content-type-options: nosniff" %}
+{% header "x-xss-protection: 1; mode=block" %} #}
+
+{# Sec content security policy here, below is an example. Not a good idea to use this without testing thoroughly as it can prevent the loading of resources if not set properly #}
+{# {% header "content-security-policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' www.google-analytics.com ssl.google-analytics.com ajax.googleapis.com data:;    frame-src 'self' http://view.vzaar.com; img-src 'self' https: www.google-analytics.com ssl.google-analytics.com ajax.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; frame-ancestors 'self'" %} #}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-gb" dir="ltr"> <!--<![endif]-->
+
+
+<head>
+    {% if entry is defined %}
+        {% set metaTitle = (entry.metaTitle) ? entry.metaTitle : entry.title %}
+        {% set metaTitle = entry.type == "homepage" ? false : metaTitle %}
+        {% set metaDescription = entry.metaDescription %}
+        {% set metaRobots = entry.metaRobots %}
+        {% set canonical = entry.url %}
+        {% set ogCrop = {
+            mode: 'crop',
+            width: 1200,
+            height: 630,
+            quality: 75,
+            position: 'top-center'
+        } %}
+        {% if entry.openGraphImage is not empty %}
+            {% set openGraphImage = entry.openGraphImage.one().getUrl(ogCrop) %}
+        {% endif %}
+    {% endif %}
+
+    {# meta #}
+    <meta charset="utf-8">
+    <title>{% if metaTitle is defined %}{{ metaTitle }} - {% endif %}{{ siteName }}</title>
+
+    {# seo #}
+    <meta name="description" content="{% if metaDescription is defined %}{{ metaDescription }}{% endif %}">
+    <meta name="keywords" content="{% if metaKeywords is defined %}{{ metaKeywords }}{% endif %}">
+    <link rel="canonical" href="{% if canonical is defined %}{{ canonical }}{% endif %}">
+    {# -- Robots meta tag --- #}
+    {# -- if not in production then noindex, else index,follow (can be overridden by entry meta) #}
+    {% if getenv("ENVIRONMENT") == 'production' %}
+        {% if metaRobots is defined %}
+            {% if metaRobots|length > 0 %}
+                {% set robotsValue = metaRobots %}
+            {% else %}
+                {% set robotsValue = "index,follow" %}
+            {% endif %}
+        {% else %}
+            {% set robotsValue = "index,follow" %}
+        {% endif %}
+    {% else %}
+        {% set robotsValue = "noindex,nofollow" %}        
+    {% endif %}
+    <meta name="robots" content="{{ robotsValue }}">
+
+    {# open graph #}
+    <meta property="og:site_name" content="{{ siteName }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% if metaTitle is defined %}{{ metaTitle }} - {% endif %}{{ siteName }}">
+    <meta property="og:url" content="{% if canonical is defined %}{{ canonical }}{% endif %}">
+    <meta property="og:image" content="{% if openGraphImage is defined %}{{ openGraphImage }}{% else %}{{ defaultSiteUrl }}assets/images/og-default.jpg{% endif %}">
+    <meta property="og:description" content="{% if metaDescription is defined %}{{ metaDescription }}{% endif %}">
+
+    {# style #}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ defaultSiteUrl }}assets/css/styles.css?{{ siteVersion }}">
+
+    {# icons #}
+    <link rel="shortcut icon" href="{{ defaultSiteUrl }}favicon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ defaultSiteUrl }}assets/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ defaultSiteUrl }}assets/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ defaultSiteUrl }}assets/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ defaultSiteUrl }}assets/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ defaultSiteUrl }}assets/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" href="{{ defaultSiteUrl }}assets/images/favicons/apple-touch-icon.png">
+
+    {# script #}
+    <!-- Global site tag (gtag.js) - Google Analytics, initialsed with key in app -->
+    {% if gaKey|length %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{gaKey}}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '{{gaKey}}');
+        </script>
+    {% endif %}
+</head>
+
+
+{% set bodyClasses = [
+    "page-type--" ~ ( entry is defined ? entry.type.handle : 'unknown' ),
+    "current-section--" ~ userType
+] %}
+
+<body
+    id="page--{{ entry is defined ? entry.slug : 'unknown' }}"
+    class="{{ bodyClasses|join(' ') }}"
+    data-siteurl="{{ defaultSiteUrl }}" 
+    data-gakey="{{ gaKey }}"
+    >
+
+    {% block layout %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+
+    <div class="container">
+        <h2>User Types</h2>
+        <p>Current: {{ userType }}
+        <ul>
+            {% for userType in siteUserTypes.all() %}
+                <li><a data-changestatus="{{ userType.slug }}">{{ userType }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script src="{{ defaultSiteUrl }}assets/js/app.js?{{ siteVersion }}" data-asset-store="/assets"></script>
+</body>
+
+</html>
+
+{% endblock %}

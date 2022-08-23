@@ -1,0 +1,22 @@
+<h2>Navigation</h2>
+<nav id="navMenu" class="navigation">
+	
+	{% set navEntries = craft.entries
+		.section('mainContentPages')
+		.relatedTo(userTypeCategory).all()
+	%}
+	<ul id="nav">
+	    {% nav entry in navEntries %}
+	        <li>
+	            <a href="{{ entry.url }}">{{ entry.title }}</a>
+	            {% ifchildren %}
+	            	<button data-show="">+</button>
+	                <ul>
+	                    {% children %}
+	                </ul>
+	            {% endifchildren %}
+	        </li>
+	    {% endnav %}
+	</ul>
+
+</nav>
