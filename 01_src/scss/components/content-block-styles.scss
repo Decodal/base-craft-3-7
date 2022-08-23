@@ -1,0 +1,21 @@
+.simple-table {
+	margin-bottom: $baseline;
+	border: #{$line-width / 2} solid $color__secondary;
+
+	.simple-table__row {
+		display: flex;
+		flex-flow: row nowrap;
+
+		.simple-table__cell {
+			flex: 1;
+			padding: 10px;
+			border: #{$line-width / 2} solid $color__secondary;
+
+			> *:first-child {margin-top: 0;}
+			> *:last-child {margin-bottom: 0;}
+		}
+	}
+	.simple-table__row:nth-child(2n) {
+		background-color: $grey__xlight;
+	}
+}

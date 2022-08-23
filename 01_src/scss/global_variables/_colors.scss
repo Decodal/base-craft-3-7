@@ -1,0 +1,21 @@
+$color__primary: #ff0000;
+$color__primary--light: lighten($color__primary, 26%);
+$color__primary--dark: darken($color__primary, 12%);
+
+$color__secondary: #071d49;
+$color__secondary--light: lighten($color__secondary, 21%);
+$color__secondary--dark: darken($color__secondary, 12%);
+
+$color__tertiary: #b80e80;
+$color__tertiary--light: lighten($color__tertiary, 21%);
+$color__tertiary--dark: darken($color__tertiary, 12%);
+
+$color__quarternary: #0069a0;
+$color__quarternary--light: lighten($color__quarternary, 21%);
+$color__quarternary--dark: darken($color__quarternary, 12%);
+
+$grey__mid: #f2f3f8;
+$grey__xlight: lighten($grey__mid, 45%);
+$grey__light: lighten($grey__mid, 28%);
+$grey__dark: saturate(darken($grey__mid, 12%), 12%);
+$grey__xdark: saturate(darken($grey__mid, 32%), 18%);

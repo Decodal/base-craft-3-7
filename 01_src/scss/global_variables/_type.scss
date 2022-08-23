@@ -1,0 +1,12 @@
+// type.scss
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+
+$typeface-body: 'Roboto';
+$typeface-heading: 'Roboto Slab';
+
+$typeface__primary: $typeface-body, Helvetica, Arial, sans-serif;
+$typeface__secondary: $typeface-heading, Helvetica, Arial, sans-serif;
+
+$fontsize__base: 17px;
+$baseline: 20px;
